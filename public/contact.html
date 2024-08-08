@@ -1,0 +1,107 @@
+<html lang="en">
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <div id="appHeader"></div>
+    <div class="strip-div background-white">
+        <div class="strip-div-display contact-page">
+            <div class="contact-page-sub cps-form">
+                <h1>Contact Us</h1>
+                <h4>Have questions or need assistance? Fill out the form below, and we'll get back to you shortly. Let's
+                    connect and create something amazing together!"</h4>
+                <form class="form-1" id="lead-form-1">
+                    <input type="email" name="email" placeholder="Enter Your Email" required />
+                    <input type="text" name="name" placeholder="Enter Your Full Name" required />
+                    <input type="tel" name="phone" placeholder="Enter Your Mobile Number" />
+                    <textarea name="message" placeholder="What Would You Like To Know"></textarea>
+                    <input type="hidden" name="source" value="sprout">
+                    <input type="submit" class="button-2">
+                </form>
+            </div>
+            <div class="contact-page-sub cps-info">
+                <div class="cps-info-text grid-2">
+                    <div class="cps-info-text-sub">
+                        <h4>Address</h4>
+                        <p>B-5, Satellite Bld, Om Nagar, JB Nagar, Andheri East, Mumbai-99</p>
+                    </div>
+                    <div class="cps-info-text-sub">
+                        <h4>Phone</h4>
+                        <p>+91-9920823516</p>
+                    </div>
+                    <div class="cps-info-text-sub">
+                        <h4>Email</h4>
+                        <p>Rushabh@mysprout.cloud</p>
+                    </div>
+                </div>
+                <div class="cps-info-map">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d235.62676761595574!2d72.86544485723894!3d19.106415176582033!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c9ab0ea919ff%3A0x2243aaba259003ba!2sSatellite%20Building!5e0!3m2!1sen!2sin!4v1720697894458!5m2!1sen!2sin"
+                        style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div id="footerDiv"></div>
+
+
+</body>
+<script src="./assets/js/components/site-base-components/header.js"></script>
+<script src="./assets/js/components/div-components/appHeader.js"></script>
+<script src="./assets/js/components/site-base-components/footer.js"></script>
+<script>
+    $(document).ready(function () {
+        // Inject common head content
+        $('head').append(htmlHead);
+        // $('#appHeader').html(appHeader);
+        $('#footerDiv').html(footerHtml);
+
+
+        $('#lead-form').submit(function (e) {
+            var form = $('#lead-form')[0];
+
+            var isAnyFieldBlank = Array.from(form.elements).some(function (element) {
+                return element.required && !element.value.trim();
+            });
+            if (isAnyFieldBlank) {
+                return;
+            }
+            e.preventDefault();
+
+            const username = '';
+            const password = '';
+            const credentials = btoa(`${username}:${password}`);
+            const authHeader = `Basic ${credentials}`;
+
+            // const data = $('#lead-form').serialize();
+            // console.log(data);
+
+            $.ajax({
+                url: '',
+                type: 'POST',
+                headers: {
+                    'Authorization': authHeader
+                },
+                data: $('#lead-form').serialize(),
+                success: function (response) {
+                    // $('#response').html(`<p>${response.message}</p>`);
+                    console.log(response)
+                },
+                error: function (xhr) {
+                    // $('#response').html(`<p>Error: ${xhr.status} - ${xhr.responseJSON.message}</p>`);
+                    console.log("fail")
+
+                }
+            });
+        });
+
+    });
+</script>
+
+</html>

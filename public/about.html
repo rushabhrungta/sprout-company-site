@@ -1,0 +1,88 @@
+<html lang="en">
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <div id="appHeader"></div>
+
+    <div class="strip-div background-white">
+        <div class="strip-div-display about-main-banner">
+            <div class="about-main-banner-sub ambs-content">
+                <h1>About Us</h1>
+                <p>We are a product design company. With a team of consultants, product managers, UX designers, and
+                    developers, each expert in their fields, and bring on board qualities that contribute most to your
+                    business success.</p>
+                <p>As a team we build digital solutions (Web & Mobile Apps), that solve our clients problems in
+                    multidisciplinary and innovative ways, allowing them to unlock hidden potential in their business.
+                </p>
+                <p>We are passionate about solving real world problems and bringing ideas to life that leave a positive
+                    impact on the world.</p>
+                <p>Everyone on our team brings finest craftsmanship and becomes a trusted partner allowing you to make
+                    informed decisions in your digital journey, helping you to unlock the hidden potential in their
+                    business.</p>
+            </div>
+            <div class="about-main-banner-sub ambs-image">
+                <img src="./assets/images/ambi-1.webp" alt="about-image">
+            </div>
+        </div>
+    </div>
+
+    <div class="strip-div background-white">
+        <div class="strip-div-display founding-team">
+            <div class="founding-team-head strip-div-sub-title">
+                <h1>Founding Team</h1>
+                <h4>We bring over 2 decades of experience and have collaborated for over 6 years over multiply projects.
+                </h4>
+            </div>
+            <div class="founding-team-content">
+                <div class="card-4">
+                    <img src="./assets/images/founders/1.webp">
+                    <p>Rushabh is an engineer with over 7 years of experience in tech, specializing in marketing,
+                        product, and project management. He has led large-scale enterprise projects for leading
+                        businesses and is a serial entrepreneur.</p>
+                </div>
+                <div class="card-4">
+                    <img src="./assets/images/founders/2.webp">
+                    <p>Ashutosh is a data scientist with a passion for technology and large scale project experience for
+                        his previous employers. he is a leading expert in back end development and ML Algorithms</p>
+                </div>
+                <div class="card-4">
+                    <img src="./assets/images/founders/3.webp">
+                    <p>Brenden is an full-stack developer with special expertise in JS based development, he brings on
+                        board 6 years of project development across industries.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="journeyDiv"></div>
+    <div id="clientsDiv"></div>
+    <div id="siteEndDiv"></div>
+    <div id="footerDiv"></div>
+
+
+</body>
+<script src="./assets/js/components/site-base-components/header.js"></script>
+<script src="./assets/js/components/div-components/appHeader.js"></script>
+<script src="./assets/js/components/div-components/whyUs.js"></script>
+<script src="./assets/js/components/div-components/journey.js"></script>
+<script src="./assets/js/components/div-components/clients.js"></script>
+<script src="./assets/js/components/div-components/siteEnd.js"></script>
+<script src="./assets/js/components/site-base-components/footer.js"></script>
+<script>
+    $(document).ready(function () {
+        // Inject common head content
+        $('head').append(htmlHead);
+        // $('#appHeader').html(appHeader);
+        $('#whyUs').html(whyUsRender);
+        renderCardsWu();
+        $('#journeyDiv').html(journeyHtml);
+        displayJourneyCards();
+        $('#clientsDiv').html(clientsHtml);
+        $('#siteEndDiv').html(siteEndHtml);
+        $('#footerDiv').html(footerHtml);
+    });
+</script>
+
+</html>

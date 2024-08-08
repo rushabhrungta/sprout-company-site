@@ -1,0 +1,63 @@
+<html lang="en">
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <div id="header-placeholder"></div>
+    <div id="appHeader"></div>
+    <div class="strip-div main-banner-background">
+        <div class="strip-div-display main-banner-content flex-col-jcenter-aleft">
+            <h1>Supercharging Your Growth With Innovation</h1>
+            <h3>We bring ideas to life that help you grow your business</h3>
+            <div class="landing-main-buttons-div">
+                <button class="button-1">About Us</button>
+                <button class="button-1">Contact Us</button>
+                <button class="button-1">Services</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="whyUs"></div>
+    <div id="usecasesHome"></div>
+    <div id="wcldeHome"></div>
+    <div id="journeyDiv"></div>
+    <div id="clientsDiv"></div>
+    <div id="siteEndDiv"></div>
+    <div id="footerDiv"></div>
+
+
+</body>
+<script src="./assets/js/components/site-base-components/header.js"></script>
+<script src="./assets/js/components/div-components/appHeader.js"></script>
+<script src="./assets/js/components/div-components/whyUs.js"></script>
+<script src="./assets/js/components/div-components/usecases.js"></script>
+<script src="./assets/js/components/div-components/wclde.js"></script>
+<script src="./assets/js/components/div-components/journey.js"></script>
+<script src="./assets/js/components/div-components/clients.js"></script>
+<script src="./assets/js/components/div-components/siteEnd.js"></script>
+<script src="./assets/js/components/site-base-components/footer.js"></script>
+<script>
+    $(document).ready(function () {
+        // Inject common head content
+        $('head').append(htmlHead);
+        // $('#appHeader').html(appHeader);
+        $('#whyUs').html(whyUsRender);
+        renderCardsWu();
+        $('#usecasesHome').html(useCaseHomeDiv)
+        renderTabs();
+        $('.tab-select').click(function () {
+            console.log(this.id)
+            displaySelectedTab(this.id);
+        });
+        $('#wcldeHome').html(wcldeDiv);
+        $('#journeyDiv').html(journeyHtml);
+        displayJourneyCards();
+        $('#clientsDiv').html(clientsHtml);
+        $('#siteEndDiv').html(siteEndHtml);
+        $('#footerDiv').html(footerHtml);
+    });
+</script>
+
+</html>
